@@ -22,7 +22,7 @@ block content
             li.item
               img(src="", alt="")
               a(href=item.url).name #{item.name}
-              p.category #{item.category.name}
+              a(href=item.category.url).category #{item.category.name}
               p.stocks #{item.stocks}
               p.price P#{item.price}
               button.deleteItemButton

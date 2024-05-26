@@ -17,7 +17,7 @@ block content
 
           each category in categories 
             li.category
-              a(href='').name #{category.name}
+              a(href=category.url).name #{category.name}
               button.deleteCategoryButton
                 img(src="/images/icons/bin.png", alt="")
             hr

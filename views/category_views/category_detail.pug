@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+  div.mainContentContainer  
+    h2= title
+    section.categoryDetailContainer  
+      div.detailsContainer 
+        p Category Name: #{category.name}
+        p Number of items: #{num_of_items}
+      div.actionsContainer
+        a(href=category.url+'/edit') 
+          button.editButton Edit
+        a(href=category.url+'/delete') 
+          button.deleteButton Delete

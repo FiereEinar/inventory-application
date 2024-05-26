@@ -6,7 +6,7 @@ const categoryController = require('../controllers/categoryController');
 
 // TODO: create a dashboard controller
 router.get('/dashboard', (req, res) => {
-  res.render('dashboard', { title: 'Dashbaord' });
+  res.render('dashboard', { title: 'Dashboard' });
 });
 
 // item route
@@ -16,5 +16,7 @@ router.get('/item/:id', itemController.item_detail);
 
 // category route
 router.get('/categories', categoryController.category_list);
+
+router.get('/category/:id', categoryController.category_detail);
 
 module.exports = router;

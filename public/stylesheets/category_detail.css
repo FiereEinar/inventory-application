@@ -10,7 +10,7 @@
 	/* min-height: 100vh; */
 }
 
-.itemDetailContainer {
+.categoryDetailContainer {
 	background-color: #fff;
 	border-radius: 5px;
 	padding: 1rem;
@@ -21,18 +21,8 @@
 	font-size: 1.2rem;
 }
 
-.itemDetailContainer > .detailsContainer {
+.categoryDetailContainer > .detailsContainer {
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
-}
-
-.itemDetailContainer > .imgContainer > img {
-	width: 250px;
-	height: 250px;
-}
-
-.detailsContainer a {
-	color: #252525;
-	text-decoration: underline;
 }

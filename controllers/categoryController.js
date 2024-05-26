@@ -10,3 +10,15 @@ exports.category_list = asyncHandler(async (req, res) => {
     categories: categories
   });
 });
+
+exports.category_detail = asyncHandler(async (req, res) => {
+  const category = await Category.findById(req.params.id).exec();
+  const num_of_items = await Item.countDocuments({ category: category._id }).exec();
+
+  res.render('category_views/category_detail', {
+    title: 'Category Detail',
+    category: category,
+    num_of_items: num_of_items
+  });
+});
+
