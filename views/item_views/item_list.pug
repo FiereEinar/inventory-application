@@ -20,7 +20,11 @@ block content
 
           each item in items 
             li.item
-              img(src="", alt="")
+              if item.imgURL 
+                img(src=item.imgURL, alt="") 
+              else 
+                img(src='/images/placeholder-image.webp', alt="") 
+
               a(href=item.url).name #{item.name}
               a(href=item.category.url).category #{item.category.name}
               p.stocks #{item.stocks}
