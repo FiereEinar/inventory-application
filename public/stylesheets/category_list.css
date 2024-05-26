@@ -8,7 +8,7 @@
 	/* min-height: 100vh; */
 }
 
-.itemListContainer {
+.categoryListContainer {
 	background-color: #fff;
 	border-radius: 5px;
 	padding: 1rem;
@@ -41,7 +41,7 @@
 	background-color: rgb(158, 204, 220);
 }
 
-.itemList {
+.categoryList {
 	display: flex;
 	flex-direction: column;
 	/* gap: 0.2rem; */
@@ -53,25 +53,17 @@
 	/* border: 1px solid #dee3d4; */
 }
 
-.itemList > .item {
+.categoryList > .category {
 	padding: 0.3rem;
 	/* border: 1px solid #dee3d4; */
 	display: flex;
-	justify-content: flex-start;
+	justify-content: space-between;
 	align-items: center;
 	gap: 1rem;
 	/* border-radius: 5px; */
 }
 
-.itemList > .item > img {
-	width: 50px;
-	height: 50px;
-	border-radius: 5px;
-}
-
-/* sizes of each property in the item list */
-
-.deleteItemButton {
+.deleteCategoryButton {
 	width: 30px;
 	height: 30px;
 	display: flex;
@@ -84,36 +76,16 @@
 	transition: all 0.2s ease;
 }
 
-.deleteItemButton:hover {
+.deleteCategoryButton:hover {
 	opacity: 0.8;
 }
 
-.deleteItemButton > img {
+.deleteCategoryButton > img {
 	width: 70%;
 	height: 70%;
 }
 
-.item > a {
+.category > a {
 	color: #252525;
 	text-decoration: underline;
-}
-
-.item > .name {
-	width: 45%;
-}
-
-.item > .category {
-	width: 20%;
-}
-
-.item > .stocks {
-	width: 10%;
-}
-
-.item > .price {
-	width: 10%;
-}
-
-.itemHeader > .name {
-	margin-left: 4rem;
 }

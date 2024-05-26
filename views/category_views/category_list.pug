@@ -1,0 +1,27 @@
+extends layout 
+
+block content
+  div.mainContentContainer
+    h2= title 
+
+    section.categoryListContainer
+      div.addButtonContainer
+        a(href='')
+          button Add Category 
+
+      if categories.length 
+        ul.categoryList
+          li.category.categoryHeader
+            p.name Categories 
+          hr
+
+          each category in categories 
+            li.category
+              a(href='').name #{category.name}
+              button.deleteCategoryButton
+                img(src="/images/icons/bin.png", alt="")
+            hr
+      else 
+        p No item in the inventory.
+
+      

@@ -6,6 +6,8 @@
 	align-items: center;
 	padding: 1rem;
 	border-bottom: 1px solid #dee3d4;
+	box-shadow: 0 0 6px 0.5px rgb(106, 105, 105);
+	background-color: #fff;
 }
 
 .headerContainer div {
@@ -33,8 +35,9 @@ li {
 	flex-direction: column;
 	padding: 0.8rem;
 	margin: 0;
-	width: 12rem;
+	min-width: 12rem;
 	gap: 0.5rem;
+	box-shadow: 0 0 6px 0.5px rgb(106, 105, 105);
 	background-color: #fff;
 }
 
@@ -64,7 +67,9 @@ li {
 
 .mainContianer {
 	display: flex;
-	min-height: 100vh;
-	background-color: #dee3d4;
+	min-height: calc(100vh - 4.2rem);
+	background-color: transparent;
+	overflow: hidden;
+	/* background-color: #dee3d4; */
 	padding: 0;
 }

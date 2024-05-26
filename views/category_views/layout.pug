@@ -1,0 +1,30 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    link(rel='stylesheet', href='/stylesheets/category_list.css')
+  body
+    div 
+      header.headerContainer
+        div 
+          img(src="", alt="")
+          h1 Inventory Application
+      main.mainContianer
+        block sidebar 
+          ul.sidebarContainer
+            li 
+              a(href='/home/dashboard')
+                img(src="/images/icons/dashboard.png", alt="")
+                h4 Dashboard
+            li 
+              a(href='/home/items')
+                img(src="/images/icons/product.png", alt="").productImg
+                h4 Items 
+            li  
+              a(href='/home/categories')
+                img(src="/images/icons/category.png", alt="")
+                h4 Categories
+            
+        block content

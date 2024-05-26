@@ -18,7 +18,7 @@ block content
             p.price Price 
           hr
 
-          each item, index in items 
+          each item in items 
             li.item
                 img(src="", alt="")
                 a(href='').name #{item.name}
@@ -27,7 +27,6 @@ block content
                 p.price P#{item.price}
                 button.deleteItemButton
                   img(src="/images/icons/bin.png", alt="")
-            if index<=items.length
               hr
       else 
         p No item in the inventory.
