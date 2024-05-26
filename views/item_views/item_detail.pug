@@ -1,0 +1,29 @@
+extends layout 
+
+block content 
+  div.mainContentContainer  
+    h2= title
+    section.itemDetailContainer  
+      div.imgContainer
+        if item.imgURL 
+          img(src=item.imgURL, alt="") 
+        else 
+          img(src='/images/placeholder-image.webp', alt="") 
+        
+
+      div.detailsContainer
+        p Name: #{item.name}
+        p Price: P#{item.price}
+        p Cost Price: P#{item.cost_price}
+        p Profit: P#{item.profit}
+        p Stocks: #{item.stocks}
+        p Category: 
+          a(href=item.category.url) #{item.category.name}
+        p Date Added: #{item.date_added_formatted}
+        p Last Updated: #{item.last_updated_formatted}
+
+      div.actionsContainer
+        a(href=item.url+'/edit') 
+          button.editButton Edit
+        a(href=item.url+'/delete') 
+          button.deleteButton Delete

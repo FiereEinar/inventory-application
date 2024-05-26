@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const { DateTime } = require("luxon");
 
 const Schema = mongoose.Schema;
 
@@ -14,6 +15,14 @@ const ItemSchema = new Schema({
 
 ItemSchema.virtual('url').get(function () {
   return `/home/item/${this._id}`;
+});
+
+ItemSchema.virtual('date_added_formatted').get(function () {
+  return DateTime.fromJSDate(this.date_added).toLocaleString(DateTime.DATE_MED);
+});
+
+ItemSchema.virtual('last_updated_formatted').get(function () {
+  return DateTime.fromJSDate(this.last_updated).toLocaleString(DateTime.DATE_MED);
 });
 
 ItemSchema.virtual('profit').get(function () {

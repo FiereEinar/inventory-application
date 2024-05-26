@@ -20,14 +20,14 @@ block content
 
           each item in items 
             li.item
-                img(src="", alt="")
-                a(href='').name #{item.name}
-                p.category #{item.category.name}
-                p.stocks #{item.stocks}
-                p.price P#{item.price}
-                button.deleteItemButton
-                  img(src="/images/icons/bin.png", alt="")
-              hr
+              img(src="", alt="")
+              a(href=item.url).name #{item.name}
+              p.category #{item.category.name}
+              p.stocks #{item.stocks}
+              p.price P#{item.price}
+              button.deleteItemButton
+                img(src="/images/icons/bin.png", alt="")
+            hr
       else 
         p No item in the inventory.
 

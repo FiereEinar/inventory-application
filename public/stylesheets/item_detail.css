@@ -1,0 +1,70 @@
+.mainContentContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	width: 100%;
+	gap: 0.8rem;
+	min-height: calc(100vh - 4.2rem);
+	/* min-height: 100vh; */
+}
+
+.itemDetailContainer {
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 1rem;
+	display: flex;
+	box-shadow: 0 0 6px 0.5px rgb(106, 105, 105);
+	gap: 1rem;
+	height: 100%;
+	font-size: 1.2rem;
+}
+
+.itemDetailContainer > .detailsContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.itemDetailContainer > .imgContainer > img {
+	width: 250px;
+	height: 250px;
+}
+
+.detailsContainer a {
+	color: #252525;
+	text-decoration: underline;
+}
+
+.actionsContainer {
+	margin-left: auto;
+	display: flex;
+	height: fit-content;
+	gap: 1rem;
+}
+
+.actionsContainer button {
+	width: 5rem;
+	padding: 0.3rem 1rem 0.3rem 1rem;
+	cursor: pointer;
+	border-radius: 5px;
+	font-weight: 600;
+	border: none;
+	transition: all 0.2s ease;
+	color: #fff;
+}
+
+.actionsContainer .editButton {
+	background-color: #0d6efd;
+}
+
+.actionsContainer .deleteButton {
+	background-color: #ff7878;
+}
+
+.actionsContainer .editButton:hover {
+	opacity: 0.8;
+}
+
+.actionsContainer .deleteButton:hover {
+	opacity: 0.8;
+}
