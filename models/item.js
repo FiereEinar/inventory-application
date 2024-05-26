@@ -8,8 +8,8 @@ const ItemSchema = new Schema({
   price: { type: Number, required: true },
   cost_price: { type: Number, required: true },
   stocks: { type: Number, required: true },
-  date_added: { type: Date },
-  last_updated: { type: Date },
+  date_added: { type: Date, default: Date.now },
+  last_updated: { type: Date, default: Date.now },
 });
 
 ItemSchema.virtual('url').get(function () {

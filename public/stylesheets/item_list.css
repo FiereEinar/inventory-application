@@ -1,0 +1,115 @@
+.mainContentContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	width: 100%;
+	gap: 0.5rem;
+	min-height: 100vh;
+}
+
+.itemListContainer {
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.addButtonContainer {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+.addButtonContainer button {
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	background-color: #0d6efd;
+	border: none;
+	color: #fff;
+	font-weight: 600;
+	transition: all 0.2s ease;
+}
+
+.addButtonContainer button:hover {
+	background-color: rgb(158, 204, 220);
+}
+
+.itemList {
+	display: flex;
+	flex-direction: column;
+	/* gap: 0.2rem; */
+	border-radius: 5px;
+	font-size: 1.1rem;
+	z-index: 99;
+	color: #676161;
+	overflow: hidden;
+	/* border: 1px solid #dee3d4; */
+}
+
+.itemList > .item {
+	padding: 0.3rem;
+	/* border: 1px solid #dee3d4; */
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 1rem;
+	/* border-radius: 5px; */
+}
+
+.itemList > .item > img {
+	width: 50px;
+	height: 50px;
+	border-radius: 5px;
+}
+
+/* sizes of each property in the item list */
+
+.deleteItemButton {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #ff7878;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.deleteItemButton:hover {
+	opacity: 0.8;
+}
+
+.deleteItemButton > img {
+	width: 70%;
+	height: 70%;
+}
+
+.item > a {
+	color: #252525;
+	text-decoration: underline;
+}
+
+.item > .name {
+	width: 45%;
+}
+
+.item > .category {
+	width: 20%;
+}
+
+.item > .stocks {
+	width: 10%;
+}
+
+.item > .price {
+	width: 10%;
+}
+
+.itemHeader > .name {
+	margin-left: 4rem;
+}

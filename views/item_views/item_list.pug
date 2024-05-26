@@ -1,6 +1,35 @@
 extends layout 
 
 block content 
-  h1= title 
-  p Hello from #{title}
-  
+  div.mainContentContainer
+    h2= title 
+
+    section.itemListContainer
+      div.addButtonContainer
+        a(href='')
+          button Add Item 
+
+      if items.length 
+        ul.itemList
+          li.item.itemHeader
+            p.name Item name 
+            p.category Category 
+            p.stocks Stock 
+            p.price Price 
+          hr
+
+          each item, index in items 
+            li.item
+                img(src="", alt="")
+                a(href='').name #{item.name}
+                p.category #{item.category.name}
+                p.stocks #{item.stocks}
+                p.price P#{item.price}
+                button.deleteItemButton
+                  img(src="/images/icons/bin.png", alt="")
+            if index<=items.length
+              hr
+      else 
+        p No item in the inventory.
+
+      
