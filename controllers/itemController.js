@@ -117,6 +117,7 @@ exports.item_edit_post = [
       price: req.body.price,
       cost_price: req.body.cost_price,
       stocks: req.body.stocks,
+      date_added: req.body.date_added,
       _id: req.params.id
     });
 
@@ -136,3 +137,16 @@ exports.item_edit_post = [
   })
 ];
 
+exports.item_delete_get = asyncHandler(async (req, res) => {
+  const item = await Item.findById(req.params.id).populate('category').exec();
+
+  res.render('item_views/delete_item', {
+    title: 'Delete Item',
+    item: item,
+  });
+});
+
+exports.item_delete_post = asyncHandler(async (req, res) => {
+  await Item.findByIdAndDelete(req.params.id);
+  res.redirect('/home/items');
+});

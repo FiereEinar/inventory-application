@@ -9,7 +9,7 @@ router.get('/dashboard', (req, res) => {
   res.render('dashboard', { title: 'Dashboard' });
 });
 
-// item route
+// item routes
 router.get('/items', itemController.item_list);
 
 router.get('/item/add', itemController.item_add_get);
@@ -20,9 +20,13 @@ router.get('/item/:id/edit', itemController.item_edit_get);
 
 router.post('/item/:id/edit', itemController.item_edit_post);
 
+router.get('/item/:id/delete', itemController.item_delete_get);
+
+router.post('/item/:id/delete', itemController.item_delete_post);
+
 router.get('/item/:id', itemController.item_detail);
 
-// category route
+// category routes
 router.get('/categories', categoryController.category_list);
 
 router.get('/category/:id', categoryController.category_detail);

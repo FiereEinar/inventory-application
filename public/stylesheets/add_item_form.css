@@ -1,6 +1,6 @@
 @import './error_msg.css';
 
-form {
+.formContainer {
 	background-color: #fff;
 	border-radius: 5px;
 	padding: 1rem;
