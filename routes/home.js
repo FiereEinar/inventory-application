@@ -3,11 +3,10 @@ const router = express.Router();
 
 const itemController = require('../controllers/itemController');
 const categoryController = require('../controllers/categoryController');
+const dashboardController = require('../controllers/dashboardController');
 
 // TODO: create a dashboard controller
-router.get('/dashboard', (req, res) => {
-  res.render('dashboard', { title: 'Dashboard' });
-});
+router.get('/dashboard', dashboardController.index);
 
 // item routes
 router.get('/items', itemController.item_list);

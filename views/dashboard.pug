@@ -1,6 +1,31 @@
 extends layout 
 
 block content 
-  h1= title
-  p Welcome to #{title}
-  a(href='/home/items') Go to items list
+  div.mainContentContainer 
+    h2= title 
+
+    section.dashboardContainer 
+
+      div.cardInfos 
+        div.contentContainer
+          div.contentIcon.lightblue
+            img(src="/images/icons/product.png", alt="").productImg
+          div.textInfo 
+            h2= itemsCount
+            p Items in the inventory
+        
+        div.contentContainer
+          div.contentIcon.lightblue
+            img(src="/images/icons/category.png", alt="")
+          div.textInfo 
+            h2= categoryCount
+            p Categories in the inventory
+        
+        div.contentContainer
+          div.contentIcon.lightred
+            img(src="/images/icons/product.png", alt="").productImg
+          div.textInfo 
+            h2= lowStockItems
+            p Items low in stocks
+        
+      

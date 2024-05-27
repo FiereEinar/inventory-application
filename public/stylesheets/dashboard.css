@@ -1,0 +1,64 @@
+.mainContentContainer {
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	width: 100%;
+	gap: 0.8rem;
+	min-height: calc(100vh - 4.2rem);
+	/* min-height: 100vh; */
+}
+
+.dashboardContainer {
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 6px 0.5px rgb(106, 105, 105);
+	gap: 0.5rem;
+	height: 100%;
+}
+
+.cardInfos {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
+
+.contentContainer {
+	border: 1px solid #dee3d4;
+	border-radius: 5px;
+	display: flex;
+	gap: 10px;
+	width: 18rem;
+	box-shadow: 0 0 1.5px 0.1px rgb(106, 105, 105);
+	padding: 1rem;
+}
+
+.contentIcon {
+	/* border: 1px solid #dee3d4; */
+	border-radius: 100%;
+	/* padding: 8px; */
+	width: 3rem;
+	height: 3rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.lightblue {
+	background-color: #5bbfde75;
+}
+
+.lightred {
+	background-color: #ce4b4b7b;
+}
+
+.contentIcon > img {
+	width: 1.8rem;
+	height: 1.8rem;
+}
+.contentIcon > .productImg {
+	width: 2rem;
+	height: 2rem;
+}
