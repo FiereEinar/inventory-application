@@ -1,0 +1,11 @@
+.errorGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.error {
+	padding: 0.5rem;
+	background-color: #ff7878;
+	border-radius: 5px;
+}

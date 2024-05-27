@@ -1,0 +1,39 @@
+@import './error_msg.css';
+
+form {
+	background-color: #fff;
+	border-radius: 5px;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 6px 0.5px rgb(106, 105, 105);
+	gap: 0.5rem;
+	height: 100%;
+}
+
+.formGroup {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.input {
+	height: 2rem;
+	padding: 5px;
+}
+
+.submitButton {
+	cursor: pointer;
+	border-radius: 5px;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	background-color: #0d6efd;
+	border: none;
+	color: #fff;
+	width: 10rem;
+	font-weight: 600;
+	transition: all 0.2s ease;
+}
+
+.submitButton:hover {
+	opacity: 0.8;
+}

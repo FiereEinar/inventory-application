@@ -1,0 +1,43 @@
+extends layout 
+
+block content 
+  div.mainContentContainer
+    h2= title 
+    
+    form(method="POST")
+      div.formGroup
+        label(for="name") Name:
+        input#name.input(type="text" placeholder='Item name' name='name' value=(item==undefined ? '' : item.name) required)
+      
+      div.formGroup
+        label(for="category") Category:
+        select#category.input(name='category' required)
+          option(value="") -- Select a category --
+
+          for category in categories 
+            if item 
+              if item.category._id.toString()===category._id.toString()
+                option(value=category._id selected) #{category.name}
+              else 
+                option(value=category._id) #{category.name}
+            else
+              option(value=category._id) #{category.name}
+      
+      div.formGroup
+        label(for="price") Price:
+        input#price.input(type="number" placeholder='Item price' name='price' value=(item==undefined ? '' : item.price) required)
+      
+      div.formGroup
+        label(for="cost_price") Cost Price:
+        input#cost_price.input(type="number" placeholder='Item cost price' name='cost_price' value=(item==undefined ? '' : item.cost_price) required)
+      
+      div.formGroup
+        label(for="stocks") Stocks:
+        input#stocks.input(type="number" placeholder='Item stocks' name='stocks' value=(item==undefined ? '' : item.stocks) required)
+      
+      button.submitButton(type='submit') Submit
+
+      if errors
+        ul.errorGroup
+          each error in errors 
+            li.error #{error.msg}

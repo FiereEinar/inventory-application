@@ -12,6 +12,10 @@ router.get('/dashboard', (req, res) => {
 // item route
 router.get('/items', itemController.item_list);
 
+router.get('/item/add', itemController.item_add_get);
+
+router.post('/item/add', itemController.item_add_post);
+
 router.get('/item/:id', itemController.item_detail);
 
 // category route
