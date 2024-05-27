@@ -16,6 +16,10 @@ router.get('/item/add', itemController.item_add_get);
 
 router.post('/item/add', itemController.item_add_post);
 
+router.get('/item/:id/edit', itemController.item_edit_get);
+
+router.post('/item/:id/edit', itemController.item_edit_post);
+
 router.get('/item/:id', itemController.item_detail);
 
 // category route
