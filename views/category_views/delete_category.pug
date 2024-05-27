@@ -1,19 +1,15 @@
 extends layout 
 
 block content 
-  div.mainContentContainer  
-    h2= title
-    section.categoryDetailContainer  
-      div.detailSection
-        div.detailsContainer 
-          p Category Name: #{category.name}
-          p Number of items: #{num_of_items}
-        div.actionsContainer
-          a(href=category.url+'/edit') 
-            button.editButton Edit
-          a(href=category.url+'/delete') 
-            button.deleteButton Delete
+  div.mainContentContainer 
+    h2= title 
 
+    section.categoryDetailContainer_delete
+      div.detailSection_delete
+          div.detailsContainer_delete 
+            p Category Name: #{category.name}
+            p Number of items: #{num_of_items}
+      
       section.itemListContainer 
 
         if categoryItems.length 
@@ -49,4 +45,9 @@ block content
         else 
           p No items in this category.
 
-        
+      if categoryItems.length 
+        h4 Please change all the item's category property or delete the items
+      else 
+        form(method='POST').deleteMessageContainer
+          h4 Are you sure you want to delete this category? 
+          button.deleteButton(type='submit') Confirm

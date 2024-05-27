@@ -6,7 +6,7 @@ block content
 
     section.categoryListContainer
       div.addButtonContainer
-        a(href='')
+        a(href='/home/category/add')
           button Add Category 
 
       if categories.length 
@@ -18,8 +18,15 @@ block content
           each category in categories 
             li.category
               a(href=category.url).name #{category.name}
-              button.deleteCategoryButton
-                img(src="/images/icons/bin.png", alt="")
+
+              div.categoryActionsContainer
+                a(href=category.url+'/edit') 
+                  button.editCategoryButton
+                    img(src="/images/icons/edit.png", alt="")
+
+                a(href=category.url+'/delete') 
+                  button.deleteCategoryButton
+                    img(src="/images/icons/bin.png", alt="")
             hr
       else 
         p No item in the inventory.

@@ -32,13 +32,13 @@
 	padding: 0.5rem 1rem 0.5rem 1rem;
 	background-color: #0d6efd;
 	border: none;
-	color: #fff;
+	color: #000;
 	font-weight: 600;
 	transition: all 0.2s ease;
 }
 
 .addButtonContainer button:hover {
-	background-color: rgb(158, 204, 220);
+	opacity: 0.8;
 }
 
 .categoryList {
@@ -54,13 +54,18 @@
 }
 
 .categoryList > .category {
-	padding: 0.3rem;
+	padding: 0.5rem;
 	/* border: 1px solid #dee3d4; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	gap: 1rem;
 	/* border-radius: 5px; */
+}
+
+.categoryActionsContainer {
+	display: flex;
+	gap: 5px;
 }
 
 .deleteCategoryButton {
@@ -76,11 +81,26 @@
 	transition: all 0.2s ease;
 }
 
-.deleteCategoryButton:hover {
+.editCategoryButton {
+	width: 30px;
+	height: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #0d6efd;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.deleteCategoryButton:hover,
+.editCategoryButton:hover {
 	opacity: 0.8;
 }
 
-.deleteCategoryButton > img {
+.deleteCategoryButton > img,
+.editCategoryButton > img {
 	width: 70%;
 	height: 70%;
 }

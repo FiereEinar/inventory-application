@@ -1,0 +1,18 @@
+extends layout 
+
+block content 
+  div.mainContentContainer
+    h2= title
+
+    form.formContainer(method='POST') 
+      div.formGroup
+        label(for="name") Category Name:
+        input#name.input(type="text" placeholder='Category name' name='name' value=(category==undefined ? '' : category.name) required)
+      
+      button.submitButton(type='submit') Submit
+
+      if errors
+        ul.errorGroup
+          each error in errors 
+            li.error #{error.msg}
+            

@@ -29,9 +29,14 @@ block content
               a(href=item.category.url).category #{item.category.name}
               p.stocks #{item.stocks}
               p.price P#{item.price}
-              a(href=item.url+'/delete') 
-                button.deleteItemButton
-                  img(src="/images/icons/bin.png", alt="")
+              div.itemActionsContainer
+                a(href=item.url+'/edit') 
+                    button.editItemButton
+                      img(src="/images/icons/edit.png", alt="")
+                      
+                a(href=item.url+'/delete') 
+                  button.deleteItemButton
+                    img(src="/images/icons/bin.png", alt="")
             hr
       else 
         p No item in the inventory.
