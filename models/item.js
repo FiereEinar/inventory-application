@@ -11,10 +11,24 @@ const ItemSchema = new Schema({
   stocks: { type: Number, required: true },
   date_added: { type: Date, default: Date.now },
   last_updated: { type: Date, default: Date.now },
+  img: {
+    public_id: {
+      type: String,
+      required: true
+    },
+    url: {
+      type: String,
+      required: true
+    }
+  }
 });
 
 ItemSchema.virtual('url').get(function () {
   return `/home/item/${this._id}`;
+});
+
+ItemSchema.virtual('imgURL').get(function () {
+  return this.img.url;
 });
 
 ItemSchema.virtual('date_added_formatted').get(function () {

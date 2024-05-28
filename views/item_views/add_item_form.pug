@@ -4,7 +4,7 @@ block content
   div.mainContentContainer
     h2= title 
     
-    form.formContainer(method="POST")
+    form.formContainer(method="POST" enctype="multipart/form-data")
       div.formGroup
         label(for="name") Name:
         input#name.input(type="text" placeholder='Item name' name='name' value=(item==undefined ? '' : item.name) required)
@@ -37,6 +37,12 @@ block content
       
       if item
         input(type="hidden" name='date_added' value=item.date_added)
+        input(type="hidden" name='previous_img' value=item.imgURL)
+        input(type="hidden" name='previous_public_id' value=item.img.public_id)
+
+      div.formGroup
+        label(for="image") Select an image:
+        input#image.input(type="file" name='image' accept='image/*')
 
       button.submitButton(type='submit') Submit
 

@@ -12,3 +12,8 @@ body {
 a {
 	text-decoration: none;
 }
+
+img {
+	object-fit: contain;
+	object-position: center;
+}

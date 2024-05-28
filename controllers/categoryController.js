@@ -17,8 +17,7 @@ exports.category_detail = asyncHandler(async (req, res) => {
     Category.findById(req.params.id).exec(),
     Item.find({ category: req.params.id }).populate('category').sort({ name: 1 }).exec()
   ]);
-  // const category = await Category.findById(req.params.id).exec();
-  // const categoryItems = await Item.find({ category: category._id }).sort({ name: 1 }).exec()
+
   const num_of_items = categoryItems.length;
 
   res.render('category_views/category_detail', {

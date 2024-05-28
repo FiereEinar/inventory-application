@@ -17,7 +17,6 @@
 	box-shadow: 0 0 6px 0.5px rgb(106, 105, 105);
 	gap: 0.5rem;
 	height: 100%;
-	overflow-y: scroll;
 }
 
 .addButtonContainer {
@@ -49,7 +48,9 @@
 	font-size: 1.1rem;
 	z-index: 99;
 	color: #676161;
-	overflow: hidden;
+	/* height: 70vh;
+	overflow-y: scroll; */
+	/* overflow: hidden; */
 	/* border: 1px solid #dee3d4; */
 }
 

@@ -2,6 +2,9 @@ const Item = require('../models/item');
 const Category = require('../models/category');
 const asyncHandler = require("express-async-handler");
 const { body, validationResult } = require("express-validator");
+const cloudinary = require('../utils/cloudinary');
+const upload = require('../utils/multer');
+const fs = require('fs/promises');
 
 exports.item_list = asyncHandler(async (req, res) => {
   const items = await Item.find().sort({ name: 1 }).populate("category").exec();
@@ -31,6 +34,8 @@ exports.item_add_get = asyncHandler(async (req, res) => {
 });
 
 exports.item_add_post = [
+  upload.single('image'),
+
   body('name', 'Name must be 2 characters above and 50 characters max')
     .trim()
     .isLength({ min: 2, max: 50 })
@@ -52,12 +57,25 @@ exports.item_add_post = [
   asyncHandler(async (req, res) => {
     const errors = validationResult(req);
 
+    let result = null;
+    const defaultImg = 'https://res.cloudinary.com/dwpfwf7gz/image/upload/v1716853804/kxl6kt1qtumtlcdy6qx6.webp';
+    const defaultPublicID = 'kxl6kt1qtumtlcdy6qx6';
+
+    if (req.file) {
+      result = await cloudinary.uploader.upload(req.file.path);
+      await fs.unlink(req.file.path);
+    }
+
     const item = new Item({
       name: req.body.name,
       category: req.body.category,
       price: req.body.price,
       cost_price: req.body.cost_price,
       stocks: req.body.stocks,
+      img: {
+        public_id: result ? result.public_id : defaultPublicID,
+        url: result ? result.secure_url : defaultImg
+      }
     });
 
     if (!errors.isEmpty()) {
@@ -83,13 +101,15 @@ exports.item_edit_get = asyncHandler(async (req, res) => {
   ]);
 
   res.render('item_views/add_item_form', {
-    title: 'Add Item',
+    title: 'Edit Item',
     categories: categories,
     item: item,
   });
 });
 
 exports.item_edit_post = [
+  upload.single('image'),
+
   body('name', 'Name must be 2 characters above and 50 characters max')
     .trim()
     .isLength({ min: 2, max: 50 })
@@ -111,6 +131,15 @@ exports.item_edit_post = [
   asyncHandler(async (req, res) => {
     const errors = validationResult(req);
 
+    let result = null;
+    const previousImgUrl = req.body.previous_img;
+    const previousPublicID = req.body.previous_public_id;
+
+    if (req.file) {
+      result = await cloudinary.uploader.upload(req.file.path);
+      await fs.unlink(req.file.path);
+    }
+
     const item = new Item({
       name: req.body.name,
       category: req.body.category,
@@ -118,7 +147,11 @@ exports.item_edit_post = [
       cost_price: req.body.cost_price,
       stocks: req.body.stocks,
       date_added: req.body.date_added,
-      _id: req.params.id
+      _id: req.params.id,
+      img: {
+        public_id: result ? result.public_id : previousPublicID,
+        url: result ? result.secure_url : previousImgUrl
+      }
     });
 
     if (!errors.isEmpty()) {
