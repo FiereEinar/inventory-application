@@ -6,22 +6,6 @@
 	gap: 0.8rem;
 }
 
-.deleteButton {
-	cursor: pointer;
-	border-radius: 5px;
-	padding: 0.5rem 1rem 0.5rem 1rem;
-	background-color: #ff7878;
-	border: none;
-	color: #000;
-	width: 10rem;
-	font-weight: 600;
-	transition: all 0.2s ease;
-}
-
-.deleteButton:hover {
-	opacity: 0.8;
-}
-
 /* category items styles */
 
 .mainContentContainer {

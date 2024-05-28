@@ -1,3 +1,5 @@
+@import './variables.css';
+
 .actionsContainer {
 	margin-left: auto;
 	display: flex;
@@ -17,11 +19,11 @@
 }
 
 .actionsContainer .editButton {
-	background-color: #0d6efd;
+	background-color: var(--primary);
 }
 
 .actionsContainer .deleteButton {
-	background-color: #ff7878;
+	background-color: var(--danger);
 }
 
 .actionsContainer .editButton:hover {
