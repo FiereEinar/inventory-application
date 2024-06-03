@@ -1,6 +1,6 @@
 # Inventory Application
 
-Inventory Application made with Express, Node.js, and MongoDB. It uses the Pug templating engine for rendering views. It supports full CRUD operations on items and categories plus a bonus feature of image upload for items.
+Inventory Application made with Express, Node.js, and MongoDB. It uses the Pug templating engine for rendering views. It supports full CRUD operations on items and categories plus a bonus feature of image upload for items using cloudinary.
 
 ## Built with
 
@@ -8,6 +8,7 @@ Inventory Application made with Express, Node.js, and MongoDB. It uses the Pug t
 - Node
 - MongoDB
 - Pug
+- Cloudinary
 
 ## Features
 
